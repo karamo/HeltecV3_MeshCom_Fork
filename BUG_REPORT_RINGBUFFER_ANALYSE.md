@@ -79,7 +79,7 @@ sequenceDiagram
     Note over doTX: 2. Durchlauf: tx_waiting=true → senden
 
     doTX->>Radio: radio.startTransmit(buffer, length)
-    Radio-->>Loop: transmittedFlag = true (Interrupt)
+    Radio->>Loop: transmittedFlag = true (Interrupt)
     Loop->>Radio: radio.finishTransmit()
     Loop->>Radio: radio.startReceive()
     Note over Loop: iReceiveTimeOutTime = millis()
